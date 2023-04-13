@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 import logo from './logo.svg';
 import './naver-sign-in.css';
 
@@ -8,9 +8,24 @@ import './naver-sign-in.css';
 
 function App() {
 
+  const formRef = useRef<HTMLFormElement | null>(null);
+
   const [isIdCheck, setIdCheck] = useState<boolean>(false);
+  //let isIdCheck2 = false;
+  const[id,setId]=useState<string>('');
   
-  const onSubmitHandler = () => {}
+  const onSubmitHandler = () => {
+    if(id.trim()){
+      setIdCheck(true);
+      return;
+    }
+    setIdCheck(false);
+    //isIdCheck2 = !isIdCheck2;
+    //console.log(isIdCheck2);
+    //isIdCheck=!isIdCheck
+    //console.log(isIdCheck);
+    if(formRef.current) formRef.current.submit();
+  }
   
   return ( //괄호꼭해서 html반환해준다, html의 주석을 못받는다. return에는 부모요소가 하나만 올수있다. 최상위 요소는하나만 와야해서 <></>안에 넣음
     <>
@@ -31,7 +46,7 @@ function App() {
         <div className="content">
 
           <div className="sign-in-wrapper">
-            <form id="form" action="https://nid.naver.com/nidlogin.login" method="POST">
+            <form ref={formRef} id="form" action="https://nid.naver.com/nidlogin.login" method="POST">
               <ul className="panel-wrapper">
                 <li className="panel-item">
                   <div className="panel-inner">
@@ -43,7 +58,8 @@ function App() {
                             <span className="blind">아이디</span>
                           </span>
                         </div>
-                        <input type="text" className="input-text" maxLength={41} placeholder="아이디" name="id" id="id" />
+                        <input type="text" className="input-text" maxLength={41} placeholder="아이디" name="id" 
+                        onChange={(event) => setId(event.target.value)}/>
                       </div>
                       <div className="input-row">
                         <div className="icon-shell">
