@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 : 로그인</title>
+    <link rel="stylesheet" href="./naver-signIn.css" />
+</head>
+<body>
+    <!--header-->
+    <div class="header">
+        <div class="header-inner">
+            <a herf="http://naver.com" class="logo">
+                <h1 class="blind">NAVER</h1>
+            </a>
+            <div class="lang" id="show-locale-switch">
+                <select id="locale-switch" name="locale-switch" title="언어선택" class="sel">
+                    <option value="kor_KR">한국어</option>
+                    <option value="eng_US">English</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!--main-->
+    <div class="main">
+        <!--content-->
+        <div class="content">
+            <!--login-wrapper-->
+            <div class="login-wrap">
+                <form action="https://nid.naver.com/nidlogin.login" method="post">
+                    <ul class="panel-wrap">
+                        <li class="panel-item">
+                            <div class="panel-inner">
+                                <div class="id-pw-wrap">
+                                    <div class="input-row" id="id-line">
+                                        <div class="icon-cell" id="id-cell">
+                                            <span class="icon-id">
+                                                <span class="blind">아이디</span>
+                                            </span>
+                                        </div>
+                                        <input type="text" name="id" id="id" placeholder="아이디" title="아이디" class="input-text" maxlength="41" value />
+                                    </div>
+                                    <div class="input-row" id="pw-line">
+                                        <div class="icon-cell" id="pw-cell">
+                                            <span class="icon-pw">
+                                                <span class="blind">비밀번호</span>
+                                            </span>
+                                        </div>
+                                        <input type="password" name="pw" id="pw" placeholder="비밀번호" title="비밀번호" class="input-text" maxlength="16" />
+                                    </div>
+                                </div>
+                                <!--로그인상태유지-->
+                                <div class="login-keep-wrap">
+                                    <div class="keep-check">
+                                        <input type="checkbox" class="input-keep" value="off" />
+                                        <label class="keep-text">로그인상태유지</label>
+                                    </div>
+                                </div>
+                                <!--로그인 버튼-->
+                                <div class="button-login-wrap">
+                                    <button type="submit" class="button-login">
+                                        <span class="button-text">로그인</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        <!--find wrapper-->
+        </div>
+    </div>
+    
+    <!--footer-->
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .span-1 {
+            display: block;
+            background-color: aquamarine;
+            width: 100px;
+            height: 100px; /*width, height는 '실제' 내용물의 크기만을 나타낸다*/
+            border: 5px black solid; /*가로 세로 총 110 * 110을 가지게 된다*/
+            padding: 10px; /* padding까지하면 총 공간 130 * 130을 가지게 된다*/
+            margin: 10px; /*요소와 요소 사이의 거리, margin까지 하면 전체 사이즈가 150 * 150을 차지하게 된다 */
+            /* 디자인 시안 보고 작업할때 작업물의 높이만 생각하면 안되고 margin, padding, bolder을 고려해서 적용해줘야한다 */
+        }
+        .span-2{
+            display: block;
+            background-color: beige;
+            width: 100px;
+            height: 100px; /*bolder이 없기때문에 전체 공간이 100 * 100을 가진다*/
+        }
+
+        .div-1{
+            display: inline; /*가로 세로의 크기를 지정할수없다?*/
+        }
+        .div-2{
+            display: block;
+        }
+        .div-3{
+            background-color: grey;
+            display: flex;
+            height: 300px;
+            flex-direction: column-reverse; /*flex의 '방향'이 바뀌는것, 중심축이 가로에서 세로로 바뀌게 되는것이다*/
+
+            align-items: center; /*align-items, justify-content 모두 쌓이는 방향! 에 따라서 바뀌게 된다. /
+            justify-content: space-between; /*left, right, flex-start, flex-end, center, space-between, space-around*/
+            
+        }
+    </style>
+</head>
+<body>
+    <span class="span-1">Content</span> <!--span은 InLine요소-->
+    <span class="span-2">Content</span>
+
+    <div class="div-1">Content</div> <!--display와 관련되서 보기-->
+    <div class="div-2">Content</div>
+    <div class="div-3">
+        <div class="span-1" style="flex: 1">1</div> <!--div는 block 요소-->
+        <div class="span-1" style="flex: 1">2</div>
+        <div class="span-1" style="flex: 1">3</div>
+        <div class="span-1" style="flex: 1">4</div>
+    </div>
+</body>
+</html>

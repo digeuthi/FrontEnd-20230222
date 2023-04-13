@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head 요소-->
+    <!-- html의 정보를 담고있는 요소-->
+    <!-- 브라우저 혹은 검색엔진에 정보를 제공할 때 사용-->
+
+    <!--meta-->
+    <!-- HTML의 데타 데이터를 지정하기 위한 요소-->
+    <!-- 문자집합, 작성자, 연관여 ... 을 표현-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title-->
+    <!-- HTML 문서의 제목을 지정하기 위한 요소-->
+    <!-- 브라우저 상단이나 탭에 표시가 된다-->
+    <title>Head 요소</title>
+
+    <!-- Style-->
+    <!-- 해당 HTML 문서의 스타일을 지정하기 위한 요소-->
+    <!-- CSS3이 작성됨-->
+    <style>
+        body {background-color: cornflowerblue;}
+        h1 {color: azure;}
+        p {color:aliceblue;}
+    </style>
+    <!--script-->
+    <!-- javaScript를 작성하기 위한 요소-->
+    <script>
+        function myFunction(){
+            alert('버튼클릭');
+        }
+    </script>
+    <script src="common.js"></script>
+    <!-- link 요소-->
+    <!-- 외부 자원과 관계를 가질때 그 관계를 지정해둔 요소-->
+    <link rel="stylesheet" href="common.css"/>
+    <link rel="icon" href="/attribute/sun.png" /> <!-- 화면에서 아이콘 걸어주는 방법-->
+</head>
+<body style="background-color: antiquewhite;">
+    <h1>
+        Header 1 Tag
+    </h1>
+    <p> 단락입니다 </p>
+    <button onclick="myFunction2();">클릭2</button>
+    <script>
+        function myFunction2(){
+            alert('버튼클릭2');
+        }
+    </script>
+</body>
+</html>
