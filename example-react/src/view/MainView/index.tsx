@@ -1,20 +1,21 @@
+import NaverFind from "../../component/FindComponent";
 import NaverInput from "../../component/InputComponent";
 import {useRef, useState} from 'react'
 
 const FIND_LIST = [
     {
-        title: '',
-        link: '',
+        title: '비밀번호 찾기',
+        link: 'https://nid.naver.com/user2/api/route?m=routePwInquiry&lang=ko_KR',
 
     },
     {
-        title: '',
-        link: '',
+        title: '아이디 찾기',
+        link: 'https://nid.naver.com/user2/api/route?m=routeIdInquiry&lang=ko_KR',
 
     },
     {
-        title: '',
-        link: '',
+        title: '회원가입',
+        link: 'https://nid.naver.com/user2/V2Join?m=agree&lang=ko_KR',
 
     },
 
@@ -24,7 +25,7 @@ export default function Main() {
     const formRef = useRef<HTMLFormElement | null>(null);
 
     const[id,setId]=useState<string>(''); //이거 위치 여기 맞니
-    const [password, setPassword] = useState<string>('');
+    const [password, setPassword] = useState<string>(''); //이거 언제 추가했대
     const [isIdCheck, setIdCheck] = useState<boolean>(false);
   
     const onSubmitHandler = () => {
@@ -80,15 +81,10 @@ export default function Main() {
       </div>
   
       <ul className="find-wrapper">
-        <li>
-          <a className="find-text" href="https://nid.naver.com/user2/api/route?m=routePwInquiry&lang=ko_KR">비밀번호 찾기</a>
-        </li>
-        <li>
-          <a className="find-text" href="https://nid.naver.com/user2/api/route?m=routeIdInquiry&lang=ko_KR">아이디 찾기</a>
-        </li>
-        <li>
-          <a className="find-text" href="https://nid.naver.com/user2/V2Join?m=agree&lang=ko_KR">회원가입</a>
-        </li>
+        {
+            FIND_LIST.map((findItem) => (<NaverFind title = {findItem.title} link={findItem.link}/>))
+            //요소를 하나씩 꺼내온걸 함수로 처리한 다음 반복되는 값을 뿌려주게 된다.
+        }
       </ul>
   
       <div className="banner-wrapper">
