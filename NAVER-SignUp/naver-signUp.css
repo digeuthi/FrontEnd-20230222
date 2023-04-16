@@ -1,6 +1,10 @@
 body {
     position: relative;
     background: #f5f6f7;
+
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+    font-size: 12px;
+    -webkit-text-size-adjust: none;
 }
 
 a {
@@ -94,8 +98,12 @@ li {
 #header {
     position: relative;
     overflow: hidden;
-    padding: 60px 0 54px;
+    padding: 60px 0 20px;
     box-sizing: border-box;
+
+    margin: 0 auto;
+    max-width: 768px;
+    min-width: 460px;
 }
 
 #container {
@@ -512,3 +520,11 @@ address .u_cri {
 /* #footer .u_cr, #footer address .all_r, #footer address .copy, #footer address .logo {
     display: none;
 } */
+
+.error_next_box {
+    display: block;
+    margin: 9px 0 -2px;
+    font-size: 12px;
+    line-height: 14px;
+    color: red;
+}
