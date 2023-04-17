@@ -15,3 +15,4 @@ export default function NaverFind({title, link}: Props) {
        
   )
 }
+
